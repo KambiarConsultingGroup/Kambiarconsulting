@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kambiar Consulting Group | Launch & Scale a Compliant Healthcare Business</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1a3a2e;--green-dark:#0f2419;--green-mid:#2a5040;
+  --tan:#b5845a;--tan-light:#c9a07a;--cream:#f5f0e8;--cream-dark:#ede6d6;
+  --white:#ffffff;--text:#1a1a1a;--text-muted:#555;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--text);background:var(--white)}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:var(--green);z-index:1000;padding:0 40px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;padding:12px 0 0}
+.logo-box{background:var(--white);padding:8px 24px;border-radius:4px;margin-bottom:12px;text-align:center}
+.logo-box img{height:80px;width:auto;display:block}
+.nav-links{display:flex;gap:24px;padding-bottom:12px;flex-wrap:wrap;justify-content:center}
+.nav-links a{color:var(--white);text-decoration:none;font-size:10px;letter-spacing:2px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--tan-light)}
+
+/* BUTTONS */
+.btn-tan{display:inline-block;background:var(--tan);color:var(--white);padding:16px 36px;font-size:10px;letter-spacing:2.5px;font-weight:700;text-decoration:none;transition:background .2s;cursor:pointer;border:none}
+.btn-tan:hover{background:var(--tan-light)}
+.btn-green{display:inline-block;background:var(--green);color:var(--white);padding:16px 36px;font-size:10px;letter-spacing:2.5px;font-weight:700;text-decoration:none;transition:background .2s;cursor:pointer;border:none}
+.btn-green:hover{background:var(--green-mid)}
+.btn-outline-dark{display:inline-block;border:2px solid var(--green);color:var(--green);padding:14px 32px;font-size:10px;letter-spacing:2.5px;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-outline-dark:hover{background:var(--green);color:var(--white)}
+.btn-outline{display:inline-block;border:1.5px solid var(--white);color:var(--white);padding:16px 48px;font-size:10px;letter-spacing:2.5px;font-weight:600;text-decoration:none;transition:all .2s}
+.btn-outline:hover{background:var(--white);color:var(--green)}
+
+/* SECTIONS */
+section{padding:90px 40px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:400;text-align:center;color:var(--green);margin-bottom:16px;line-height:1.2}
+.section-sub{font-size:13px;text-align:center;color:var(--text-muted);max-width:680px;margin:0 auto 50px;line-height:1.9}
+.center{text-align:center}
+
+/* HERO */
+.hero{padding:200px 40px 100px;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px}
+.hero-left{flex:1.2}
+.hero-tag{font-size:10px;letter-spacing:3px;font-weight:600;color:var(--tan);margin-bottom:16px;text-transform:uppercase}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:50px;font-weight:500;line-height:1.15;color:var(--green);margin-bottom:20px}
+.hero-sub{font-size:14px;color:var(--text-muted);margin-bottom:32px;line-height:1.9;max-width:520px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px}
+.checklist{list-style:none;margin-bottom:0}
+.checklist li{font-size:13px;color:var(--text-muted);padding:6px 0;display:flex;align-items:center;gap:10px}
+.checklist li::before{content:'✔';color:var(--tan);font-size:12px;flex-shrink:0;font-weight:700}
+.hero-right{flex:1;display:flex;justify-content:flex-end}
+.hero-img{width:400px;height:520px;overflow:hidden;position:relative;background:transparent}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+/* PROBLEM */
+.problem{background:var(--green);padding:80px 40px}
+.problem h2{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--white);text-align:center;margin-bottom:16px;font-weight:400}
+.problem p{text-align:center;color:rgba(255,255,255,0.75);font-size:14px;max-width:600px;margin:0 auto 48px;line-height:1.9}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:700px;margin:0 auto 48px}
+.pain-item{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:20px 24px;display:flex;align-items:flex-start;gap:14px}
+.pain-item span{color:var(--tan-light);font-size:18px;flex-shrink:0;margin-top:2px}
+.pain-item p{color:rgba(255,255,255,0.85);font-size:13px;line-height:1.7;margin:0}
+.problem-cta{text-align:center;color:rgba(255,255,255,0.9);font-size:16px;font-family:'Cormorant Garamond',serif;font-style:italic;margin-bottom:32px}
+
+/* SOLUTION */
+.solution{background:var(--cream);padding:90px 40px}
+.solution-inner{display:flex;gap:60px;align-items:center;flex-wrap:wrap}
+.solution-left{flex:1;min-width:280px}
+.solution-left h2{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--green);margin-bottom:20px;line-height:1.2;font-weight:400}
+.solution-left p{font-size:13.5px;color:var(--text-muted);line-height:1.9;margin-bottom:20px}
+.solution-checks{list-style:none;margin-bottom:32px}
+.solution-checks li{font-size:13px;color:var(--text-muted);padding:7px 0;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--cream-dark)}
+.solution-checks li:last-child{border-bottom:none}
+.solution-checks li::before{content:'✔';color:var(--tan);font-weight:700;flex-shrink:0}
+.solution-right{flex:1;min-width:280px;background:var(--green);padding:36px;color:var(--white)}
+.solution-right h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;margin-bottom:20px;color:var(--white)}
+.solution-right ul{list-style:none}
+.solution-right li{font-size:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.85);letter-spacing:.3px}
+.solution-right li:last-child{border-bottom:none}
+.solution-right li::before{content:'✦';color:var(--tan-light);font-size:10px;flex-shrink:0}
+
+/* STATS */
+.stats{background:var(--white);padding:80px 40px}
+.stats-headline{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;text-align:center;color:var(--green);margin-bottom:48px;line-height:1.3}
+.stats-headline em{font-style:italic}
+.stats-grid{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.stat-circle{width:155px;height:155px;background:var(--green);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--white);line-height:1}
+.stat-label{font-size:10px;color:rgba(255,255,255,0.8);letter-spacing:1.5px;margin-top:6px;line-height:1.4;text-transform:uppercase}
+.authority-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.auth-item{text-align:center;padding:24px 16px;border:1px solid var(--cream-dark)}
+.auth-item .auth-icon{font-size:24px;margin-bottom:10px}
+.auth-item h4{font-family:'Cormorant Garamond',serif;font-size:16px;color:var(--green);font-weight:600;letter-spacing:1px;margin-bottom:6px}
+.auth-item p{font-size:11px;color:var(--text-muted);line-height:1.6}
+
+/* SERVICES */
+.services{background:var(--cream);padding:90px 40px}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
+.service-card{background:var(--white);padding:32px;border:1px solid var(--cream-dark);transition:border-color .2s;display:flex;gap:20px;align-items:flex-start}
+.service-card:hover{border-color:var(--tan)}
+.svc-icon{font-size:28px;flex-shrink:0;margin-top:2px}
+.svc-text h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--green);margin-bottom:10px}
+.svc-text p{font-size:12.5px;color:var(--text-muted);line-height:1.8}
+
+/* HOW IT WORKS */
+.how{background:var(--green);padding:90px 40px}
+.how h2{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--white);text-align:center;margin-bottom:16px;font-weight:400}
+.how p{text-align:center;color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:56px}
+.steps-row{display:flex;align-items:flex-start;justify-content:center;gap:0;flex-wrap:wrap;max-width:900px;margin:0 auto 48px}
+.step{text-align:center;flex:1;min-width:200px;padding:0 20px;position:relative}
+.step-num{width:64px;height:64px;border:2px solid var(--tan);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--white);margin:0 auto 18px}
+.step h4{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:10px;font-weight:500}
+.step p{font-size:12px;color:rgba(255,255,255,0.7);line-height:1.7}
+.step-connector{width:60px;height:2px;background:rgba(255,255,255,0.2);align-self:center;flex-shrink:0;margin-bottom:60px}
+
+/* ABOUT / KEONA */
+.about{background:var(--cream-dark);padding:90px 40px}
+.about-inner{display:flex;align-items:center;gap:70px;flex-wrap:wrap}
+.about-img{width:360px;height:460px;flex-shrink:0;overflow:hidden}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.about-right .tag{font-size:10px;letter-spacing:3px;font-weight:600;color:var(--tan);margin-bottom:10px}
+.about-right h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:400;color:var(--green);margin-bottom:6px;line-height:1.2}
+.about-right .script{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--text-muted);margin-bottom:22px}
+.about-right p{font-size:13.5px;color:var(--text-muted);line-height:1.9;margin-bottom:24px}
+.about-box{background:var(--green);padding:24px 28px}
+.about-box ul{list-style:none}
+.about-box li{color:var(--white);font-size:12.5px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;gap:12px}
+.about-box li:last-child{border-bottom:none}
+.about-box li::before{content:'✦';color:var(--tan-light);font-size:10px;flex-shrink:0}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--white);padding:90px 40px}
+.testi-grid{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.testi-card{background:var(--cream);padding:36px;flex:1;min-width:280px;max-width:480px;border:1px solid var(--cream-dark)}
+.testi-title{font-family:'Cormorant Garamond',serif;font-size:26px;margin-bottom:8px}
+.testi-title em{font-style:italic;font-weight:400}
+.testi-title strong{font-weight:600;font-style:normal}
+.stars{color:var(--green);font-size:16px;letter-spacing:3px;margin-bottom:14px}
+.testi-divider{border:none;border-top:1px solid var(--cream-dark);margin-bottom:16px}
+.testi-card p{font-size:12px;letter-spacing:.3px;color:var(--text);line-height:1.9;margin-bottom:20px}
+.testi-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;text-align:center}
+
+/* CONTACT */
+.contact{background:var(--green);padding:100px 40px}
+.contact .section-title{color:var(--white)}
+.contact .section-sub{color:rgba(255,255,255,0.7)}
+.contact-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.contact-item{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.08);padding:18px 28px;border:1px solid rgba(255,255,255,0.15);min-width:220px}
+.contact-item svg{width:20px;height:20px;stroke:var(--tan-light);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.contact-item span{color:var(--white);font-size:13px}
+.contact-item a{color:var(--white);text-decoration:none}
+.contact-item a:hover{color:var(--tan-light)}
+.hours-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:20px 32px;max-width:320px;margin:0 auto 40px;text-align:center}
+.hours-box p{color:rgba(255,255,255,0.85);font-size:12px;line-height:1.9;letter-spacing:.3px}
+.hours-box p strong{color:var(--white)}
+
+/* FINAL CTA BANNER */
+.cta-banner{background:var(--tan);padding:70px 40px;text-align:center}
+.cta-banner h2{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--white);margin-bottom:16px;font-weight:400;line-height:1.2}
+.cta-banner p{color:rgba(255,255,255,0.9);font-size:14px;margin-bottom:36px;line-height:1.8}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-white{display:inline-block;background:var(--white);color:var(--tan);padding:16px 36px;font-size:10px;letter-spacing:2.5px;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-white:hover{background:var(--cream)}
+.btn-outline-white{display:inline-block;border:2px solid var(--white);color:var(--white);padding:14px 34px;font-size:10px;letter-spacing:2.5px;font-weight:700;text-decoration:none;transition:all .2s}
+.btn-outline-white:hover{background:var(--white);color:var(--tan)}
+
+/* LEGAL PAGES */
+.legal-page{background:var(--white);padding:80px 40px;display:none}
+.legal-page h2{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--green);margin-bottom:8px}
+.legal-date{font-size:11px;color:var(--text-muted);letter-spacing:1px;margin-bottom:32px}
+.legal-body{font-size:13px;color:var(--text-muted);line-height:2;display:flex;flex-direction:column;gap:20px}
+.legal-body strong{color:var(--green)}
+.legal-back{margin-top:32px;background:none;border:none;color:var(--tan);font-size:12px;letter-spacing:2px;cursor:pointer;font-family:'Montserrat',sans-serif}
+
+/* FOOTER */
+footer{background:var(--green-dark);padding:28px 40px;text-align:center}
+.footer-disclaimer{color:rgba(255,255,255,0.45);font-size:10px;letter-spacing:.5px;line-height:1.8;max-width:700px;margin:0 auto 16px}
+.footer-links{display:flex;gap:32px;justify-content:center;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,0.5);font-size:10px;letter-spacing:2px;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{gap:12px}
+  .nav-links a{font-size:8.5px}
+  .hero{flex-direction:column;padding:180px 20px 60px}
+  .hero h1{font-size:34px}
+  .hero-img{width:100%;height:340px}
+  .hero-btns{flex-direction:column}
+  section,.problem,.solution,.stats,.how,.about,.cta-banner,.contact{padding:60px 20px}
+  .pain-grid,.service-grid,.authority-grid{grid-template-columns:1fr}
+  .solution-inner,.about-inner{flex-direction:column}
+  .about-img{width:100%;height:300px}
+  .steps-row{flex-direction:column;align-items:center}
+  .step-connector{display:none}
+  .testi-grid,.contact-grid,.stats-grid{flex-direction:column;align-items:center}
+  .cta-btns{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo-box">
+      <img src="logo.svg" alt="Kambiar Consulting Group">
+    </div>
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#about">ABOUT</a>
+      <a href="#testimonials">TESTIMONIALS</a>
+      <a href="#contact">CONTACT</a>
+      <a href="https://stan.store/therealnurseke" target="_blank" style="background:var(--tan);padding:6px 16px;border-radius:2px">BOOK A CALL</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" style="padding:0;background:var(--white)">
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-tag">Healthcare Executive Advisory — Built on Experience, Not Theory</p>
+      <h1>Launch & Scale a Profitable, Compliant Healthcare Business — Without the Guesswork</h1>
+      <p class="hero-sub">We help nurses, entrepreneurs, and healthcare professionals start, structure, and grow home care and healthcare businesses the right way — from licensing to revenue.</p>
+      <div class="hero-btns">
+        <a href="https://stan.store/therealnurseke" target="_blank" class="btn-tan">BOOK YOUR STRATEGY CALL</a>
+        <a href="#services" class="btn-outline-dark">START YOUR BUSINESS TODAY</a>
+      </div>
+      <ul class="checklist">
+        <li>20+ Years of Real-World Healthcare Experience</li>
+        <li>CEO-Level Advisory — Not Just Coaching</li>
+        <li>Compliance-First Strategy That Actually Works</li>
+      </ul>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img"><img src="hero.png" alt="Keona Banks-Todd — Principal Advisor, Kambiar Consulting Group"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="section-inner">
+    <h2>Starting a Healthcare Business Shouldn't Feel This Hard</h2>
+    <p>Most people have the passion — but get stuck in the process. Sound familiar?</p>
+    <div class="pain-grid">
+      <div class="pain-item"><span>❌</span><p>Don't know where to start with licensing and compliance</p></div>
+      <div class="pain-item"><span>❌</span><p>Wasting time and money fixing preventable mistakes</p></div>
+      <div class="pain-item"><span>❌</span><p>Confused about structure, systems, and operations</p></div>
+      <div class="pain-item"><span>❌</span><p>Struggling to attract clients and generate consistent revenue</p></div>
+    </div>
+    <p class="problem-cta">👉 That's exactly where we come in.</p>
+    <div class="center"><a href="https://stan.store/therealnurseke" target="_blank" class="btn-tan">BOOK YOUR STRATEGY CALL</a></div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="section-inner">
+    <div class="solution-inner">
+      <div class="solution-left">
+        <h2>At Kambiar Consulting Group, We Don't Just Teach Healthcare Business — We've Built It.</h2>
+        <p>As a division of Kambiar Healthcare, LLC, we bring real-world execution, not theory. We've navigated licensing, compliance, staffing, and scaling — and now we help you do the same.</p>
+        <ul class="solution-checks">
+          <li>Start your healthcare business the right way</li>
+          <li>Navigate licensing and compliance with confidence</li>
+          <li>Build systems that support real, sustainable revenue</li>
+          <li>Position your business for long-term growth</li>
+          <li>CEO-level advisory backed by 20+ years of experience</li>
+        </ul>
+        <a href="https://stan.store/therealnurseke" target="_blank" class="btn-tan">LET'S BUILD YOUR BUSINESS</a>
+      </div>
+      <div class="solution-right">
+        <h3>How We're Different</h3>
+        <ul>
+          <li>Built from real-world execution — not theory</li>
+          <li>Compliance-first strategy at every stage</li>
+          <li>CEO-level advisory (not coaching)</li>
+          <li>Outcome-driven engagements</li>
+          <li>Nurse-led organization with multi-state experience</li>
+          <li>Direct access to your consultant — always</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS / AUTHORITY -->
+<section class="stats">
+  <div class="section-inner">
+    <p class="stats-headline">In just 9 years we've helped over 22+ <em>small businesses</em></p>
+    <div class="stats-grid">
+      <div class="stat-circle"><span class="stat-num">22+</span><span class="stat-label">Clients Served</span></div>
+      <div class="stat-circle"><span class="stat-num">160+</span><span class="stat-label">Strategies Delivered</span></div>
+      <div class="stat-circle"><span class="stat-num">19K+</span><span class="stat-label">Emails Sent</span></div>
+      <div class="stat-circle"><span class="stat-num">100%</span><span class="stat-label">Satisfaction Rate</span></div>
+    </div>
+    <div class="authority-grid">
+      <div class="auth-item"><div class="auth-icon">🏥</div><h4>Nurse-Led</h4><p>Founded & led by a BSN, RN with 20+ years in healthcare</p></div>
+      <div class="auth-item"><div class="auth-icon">📋</div><h4>Compliance-First</h4><p>Every strategy built around regulatory compliance and risk reduction</p></div>
+      <div class="auth-item"><div class="auth-icon">🌎</div><h4>Multi-State</h4><p>Experience advising healthcare businesses across multiple states</p></div>
+      <div class="auth-item"><div class="auth-icon">🏆</div><h4>Award-Winning</h4><p>From bootstrapping to building an award-winning healthcare agency</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-inner">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Every engagement is tailored to your specific challenges, goals, and stage of business. Here's how we help:</p>
+    <div class="service-grid">
+      <div class="service-card"><span class="svc-icon">🚀</span><div class="svc-text"><h3>Start Your Healthcare Business</h3><p>Step-by-step guidance to launch your home care or healthcare agency the right way — from entity formation to first client.</p></div></div>
+      <div class="service-card"><span class="svc-icon">📋</span><div class="svc-text"><h3>Licensing & Compliance Consulting</h3><p>Avoid costly mistakes and regulatory delays with expert guidance tailored to your state and service model.</p></div></div>
+      <div class="service-card"><span class="svc-icon">💡</span><div class="svc-text"><h3>Business Strategy & Growth Consulting</h3><p>Scale your business with proven systems, operational structure, and strategic planning backed by real-world experience.</p></div></div>
+      <div class="service-card"><span class="svc-icon">📦</span><div class="svc-text"><h3>Done-With-You Programs</h3><p>We walk alongside you step-by-step — Do-It-With-You or Do-It-For-You — to ensure you launch, grow, and succeed.</p></div></div>
+      <div class="service-card"><span class="svc-icon">🛠</span><div class="svc-text"><h3>Administrative Support</h3><p>Streamlined, compliance-ready administrative systems to stabilize operations, reduce risk, and support leadership through transition and growth.</p></div></div>
+      <div class="service-card"><span class="svc-icon">📣</span><div class="svc-text"><h3>Marketing Strategy Consultation</h3><p>Strategic rebranding and occupancy-focused marketing to rebuild trust, strengthen referrals, and drive qualified client inquiries.</p></div></div>
+    </div>
+    <div class="center"><a href="https://stan.store/therealnurseke" target="_blank" class="btn-green">BOOK YOUR STRATEGY CALL</a></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-inner">
+    <h2>How It Works</h2>
+    <p>Three simple steps to start building your compliant, profitable healthcare business.</p>
+    <div class="steps-row">
+      <div class="step"><div class="step-num">1</div><h4>Book Your Strategy Call</h4><p>Schedule a discovery call so we can understand your goals, challenges, and where you are in your journey.</p></div>
+      <div class="step-connector"></div>
+      <div class="step"><div class="step-num">2</div><h4>Get a Customized Plan</h4><p>We build a tailored roadmap specific to your business model, state requirements, and revenue goals.</p></div>
+      <div class="step-connector"></div>
+      <div class="step"><div class="step-num">3</div><h4>Launch & Scale</h4><p>Execute with expert guidance by your side — from licensing to operations to growth.</p></div>
+    </div>
+    <div class="center"><a href="https://stan.store/therealnurseke" target="_blank" class="btn-tan">START HERE → BOOK YOUR CALL</a></div>
+  </div>
+</section>
+
+<!-- ABOUT / KEONA -->
+<section id="about" class="about">
+  <div class="section-inner">
+    <div class="about-inner">
+      <div class="about-img"><img src="about.jpg" alt="Keona Banks-Todd — The Real Nurse Ke"></div>
+      <div class="about-right">
+        <p class="tag">PRINCIPAL ADVISOR</p>
+        <h2>Keona B. Todd</h2>
+        <p class="script">"The Real Nurse Ke"</p>
+        <p style="font-size:11px;letter-spacing:2px;font-weight:600;color:var(--green);margin-bottom:16px">BSN, RN — HEALTHCARE EXECUTIVE ADVISOR</p>
+        <p>With two decades in the industry, I've helped business owners move from uncertainty into success stories. I'm not just here to offer quick fixes — I'm committed to understanding your unique challenges and partnering with you for long-term success.</p>
+        <p>I built Kambiar Healthcare, LLC from the ground up — navigating licensing, compliance, staffing, and scaling firsthand. Now I bring that CEO-level experience directly to you.</p>
+        <div class="about-box">
+          <ul>
+            <li>From Bootstrapping to an Award-Winning Agency</li>
+            <li>CEO-Level Advisory — Not Just Coaching</li>
+            <li>Compliance-Driven Strategy & Real-World Execution</li>
+            <li>One-on-One Mentorship & Group Workshops Available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <div class="section-inner">
+    <h2 class="section-title">Client Reviews</h2>
+    <p class="section-sub">Real results from real clients. Here's what people say about working with Kambiar Consulting Group.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-title"><em>Client</em> <strong>REVIEW</strong></div>
+        <div class="stars">★★★★★</div>
+        <hr class="testi-divider">
+        <p>KEONA AND HER TEAM HAVE HELPED ME TAKE OUR COMPANY'S STAFFING TO THE NEXT LEVEL!! I WAS ONCE SO NERVOUS. HAD NO CLUE WHAT I WAS DOING, AND NOW I KNOW! THIS MENTORSHIP WAS NEEDED FOR OUR COMPANY AS I TOOK OVER THE LEAD MANAGER ROLE TO HELP US TO MOVE FORWARD.</p>
+        <div class="testi-name">Jamie S.</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-title"><em>Client</em> <strong>REVIEW</strong></div>
+        <div class="stars">★★★★★</div>
+        <hr class="testi-divider">
+        <p>FROM THE MOMENT I STEPPED INSIDE, I WAS GREETED BY THE WARM AND INVITING AMBIANCE THAT INSTANTLY PUT ME AT EASE. THANK YOU, KAMBIAR CONSULTING GROUP, ESPECIALLY KEONA FOR NOT ONLY HELPING ME WITH STAFFING NEEDS BUT ALSO ALL OF THE NECESSARY CLINICAL EXPERTISE THAT YOU AND YOUR TEAM PROVIDED. I'M BEYOND GRATEFUL TO FIND SUCH A CARING AND PROFESSIONAL COMPANY!</p>
+        <div class="testi-name">Olivia N. RN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-inner">
+    <h2 class="section-title">Let's Turn Your Challenges Into Opportunities</h2>
+    <p class="section-sub">Ready to take your business to the next level? Reach out and let's build a plan tailored just for you.</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        <span>864.210.1884</span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><a href="mailto:hello@kambiarconsulting.com">hello@kambiarconsulting.com</a></span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span><a href="http://www.kambiarconsulting.com" target="_blank">www.kambiarconsulting.com</a></span>
+      </div>
+    </div>
+    <div class="hours-box">
+      <p><strong>Office Hours</strong><br>Monday, Wednesday & Friday<br>9:00am – 5:00pm<br>*Closed weekends and holidays</p>
+    </div>
+    <div class="center"><a href="https://stan.store/therealnurseke" target="_blank" class="btn-outline">SCHEDULE YOUR CALL</a></div>
+  </div>
+</section>
+
+<!-- FINAL CTA BANNER -->
+<section class="cta-banner">
+  <div class="section-inner">
+    <h2>Stop Guessing. Start Building Your Healthcare Business the Right Way.</h2>
+    <p>Book your strategy call today and let's create a plan that works for your goals, your timeline, and your budget.</p>
+    <div class="cta-btns">
+      <a href="https://stan.store/therealnurseke" target="_blank" class="btn-white">BOOK YOUR STRATEGY CALL TODAY</a>
+      <a href="mailto:hello@kambiarconsulting.com" class="btn-outline-white">LET'S BUILD YOUR BUSINESS TOGETHER</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL PAGES -->
+<section id="privacy" class="legal-page">
+  <div class="section-inner" style="max-width:800px">
+    <h2>Privacy Policy</h2>
+    <p class="legal-date">Last Updated: April 2026</p>
+    <div class="legal-body">
+      <p><strong>1. Information We Collect</strong><br>Kambiar Consulting Group, a division of Kambiar Healthcare, LLC, collects information you voluntarily provide when contacting us, booking a discovery call, or subscribing to communications — including your name, email, phone number, and business information.</p>
+      <p><strong>2. How We Use Your Information</strong><br>We use your information to respond to inquiries, deliver consulting services, send relevant business communications, and improve our services. We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+      <p><strong>3. Data Security</strong><br>We take reasonable precautions to protect your information. No method of transmission over the internet is 100% secure. Contact us directly with any security concerns.</p>
+      <p><strong>4. Third-Party Links</strong><br>Our website may contain links to third-party sites. We are not responsible for the privacy practices of those sites.</p>
+      <p><strong>5. Contact</strong><br>Questions? Email <a href="mailto:hello@kambiarconsulting.com" style="color:var(--tan)">hello@kambiarconsulting.com</a> or call 864.210.1884.</p>
+    </div>
+    <button class="legal-back" onclick="document.getElementById('privacy').style.display='none';window.scrollTo(0,document.body.scrollHeight)">← BACK TO SITE</button>
+  </div>
+</section>
+
+<section id="terms" class="legal-page">
+  <div class="section-inner" style="max-width:800px">
+    <h2>Terms & Conditions</h2>
+    <p class="legal-date">Last Updated: April 2026</p>
+    <div class="legal-body">
+      <p><strong>1. Agreement</strong><br>By accessing www.kambiarconsulting.com or engaging services with Kambiar Consulting Group, a division of Kambiar Healthcare, LLC, you agree to these Terms & Conditions.</p>
+      <p><strong>2. Services</strong><br>KCG provides executive business consulting, strategic advisory, leadership development, and related services. All services are outlined in individual service agreements provided prior to engagement.</p>
+      <p><strong>3. Payment & Refunds</strong><br>All fees are due as outlined in your service agreement. Deposits are non-refundable. All terms and conditions must be reviewed and agreed to BEFORE payment is processed. Refund requests must be submitted in writing within 7 days of payment and are subject to review.</p>
+      <p><strong>4. Intellectual Property</strong><br>All content — including text, frameworks, and materials — is the intellectual property of Kambiar Healthcare, LLC. Reproduction without written consent is prohibited.</p>
+      <p><strong>5. Client Responsibilities</strong><br>Clients are responsible for providing accurate information and implementing recommendations. KCG is not liable for outcomes resulting from incomplete implementation or inaccurate information provided by the client.</p>
+      <p><strong>6. Governing Law</strong><br>These terms are governed by the laws of the State of South Carolina.</p>
+      <p><strong>7. Contact</strong><br><a href="mailto:hello@kambiarconsulting.com" style="color:var(--tan)">hello@kambiarconsulting.com</a> | 864.210.1884</p>
+    </div>
+    <button class="legal-back" onclick="document.getElementById('terms').style.display='none';window.scrollTo(0,document.body.scrollHeight)">← BACK TO SITE</button>
+  </div>
+</section>
+
+<section id="disclaimer" class="legal-page">
+  <div class="section-inner" style="max-width:800px">
+    <h2>Disclaimer</h2>
+    <p class="legal-date">Last Updated: April 2026</p>
+    <div class="legal-body">
+      <p><strong>1. No Guaranteed Results</strong><br>Kambiar Consulting Group provides advisory and consulting services based on experience and industry knowledge. Results are not guaranteed and depend entirely on client execution, market conditions, and factors outside our control.</p>
+      <p><strong>2. For Consulting & Advisory Purposes Only</strong><br>All services and content are provided for consulting and educational purposes only. Nothing constitutes legal, financial, medical, or accounting advice. Consult licensed professionals in those fields for advice specific to your situation.</p>
+      <p><strong>3. Healthcare Compliance</strong><br>While KCG advises on compliance-driven strategy, our services do not replace the guidance of a licensed healthcare compliance attorney or regulatory body. Clients remain solely responsible for ensuring their businesses meet all applicable federal, state, and local regulations.</p>
+      <p><strong>4. Client Responsibility</strong><br>The client is responsible for implementation and execution. Kambiar Consulting Group is not liable for outcomes resulting from the client's decisions, actions, or inactions following consulting sessions.</p>
+      <p><strong>5. Testimonials</strong><br>Testimonials reflect individual client experiences and are not a guarantee of similar outcomes. Results may not be typical.</p>
+      <p><strong>6. Contact</strong><br><a href="mailto:hello@kambiarconsulting.com" style="color:var(--tan)">hello@kambiarconsulting.com</a> | 864.210.1884</p>
+    </div>
+    <button class="legal-back" onclick="document.getElementById('disclaimer').style.display='none';window.scrollTo(0,document.body.scrollHeight)">← BACK TO SITE</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-disclaimer">Kambiar Consulting Group is a division of Kambiar Healthcare, LLC. All consulting services are advisory in nature. Results are not guaranteed and depend on client execution and compliance. For educational and consulting purposes only.</p>
+  <div class="footer-links">
+    <a href="#" onclick="event.preventDefault();['terms','disclaimer'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('privacy').style.display='block';document.getElementById('privacy').scrollIntoView({behavior:'smooth'})">PRIVACY POLICY</a>
+    <a href="#" onclick="event.preventDefault();['privacy','disclaimer'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('terms').style.display='block';document.getElementById('terms').scrollIntoView({behavior:'smooth'})">TERMS & CONDITIONS</a>
+    <a href="#" onclick="event.preventDefault();['privacy','terms'].forEach(id=>document.getElementById(id).style.display='none');document.getElementById('disclaimer').style.display='block';document.getElementById('disclaimer').scrollIntoView({behavior:'smooth'})">DISCLAIMER</a>
+  </div>
+</footer>
+
+</body>
+</html>
