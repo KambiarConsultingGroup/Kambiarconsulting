@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kambiar Consulting Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --green:#1a3a2e;--green-dark:#0f2419;--green-mid:#2a5040;
+  --tan:#b5845a;--tan-light:#c9a07a;--cream:#f5f0e8;--cream-dark:#ede6d6;
+  --white:#ffffff;--text:#1a1a1a;--text-muted:#555;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--text);background:var(--white)}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:var(--green);z-index:1000;padding:0 40px}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;padding:12px 0 0}
+.logo-box{background:var(--white);padding:8px 24px;border-radius:4px;margin-bottom:12px;text-align:center}
+.logo-box img{height:80px;width:auto;display:block}
+.nav-links{display:flex;gap:28px;padding-bottom:12px;flex-wrap:wrap;justify-content:center}
+.nav-links a{color:var(--white);text-decoration:none;font-size:10px;letter-spacing:2.5px;font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--tan-light)}
+
+/* HERO */
+.hero{padding:200px 40px 100px;max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:60px}
+.hero-left{flex:1.2}
+.hero-right{flex:1;display:flex;justify-content:flex-end}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:500;line-height:1.1;color:var(--green);margin-bottom:20px}
+.hero-sub{font-size:11px;letter-spacing:2px;font-weight:600;color:var(--text);margin-bottom:28px}
+.checklist{list-style:none;margin-bottom:36px}
+.checklist li{font-size:14px;color:var(--text-muted);padding:7px 0;display:flex;align-items:center;gap:10px}
+.checklist li::before{content:'';width:18px;height:18px;border:1.5px solid var(--tan);border-radius:50%;flex-shrink:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23b5845a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") center/10px no-repeat}
+.btn-tan{display:inline-block;background:var(--tan);color:var(--white);padding:16px 36px;font-size:10px;letter-spacing:2.5px;font-weight:600;text-decoration:none;transition:background .2s;cursor:pointer;border:none}
+.btn-tan:hover{background:var(--tan-light)}
+.hero-img-placeholder{width:380px;height:520px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;position:relative;background:transparent}
+.hero-img-placeholder img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+/* SECTION BASE */
+section{padding:90px 40px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:400;text-align:center;color:var(--green);margin-bottom:16px;line-height:1.2}
+.section-sub{font-size:11px;letter-spacing:1.5px;font-weight:600;text-align:center;color:var(--text);max-width:680px;margin:0 auto 60px;line-height:1.9}
+.center{text-align:center}
+
+/* STATS */
+.stats{background:var(--cream);padding:80px 40px}
+.stats-headline{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;text-align:center;color:var(--green);margin-bottom:50px;line-height:1.3}
+.stats-headline span{font-style:italic}
+.stats-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
+.stat-circle{width:160px;height:160px;background:var(--green);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:400;color:var(--white);line-height:1}
+.stat-label{font-size:11px;color:rgba(255,255,255,0.8);letter-spacing:1px;margin-top:6px;line-height:1.3}
+.stats-desc{text-align:center;font-size:14px;color:var(--text-muted);max-width:680px;margin:0 auto;line-height:1.8;font-weight:600}
+
+/* SOLUTIONS */
+.solutions{background:var(--white)}
+.pillars{display:flex;gap:40px;justify-content:center;flex-wrap:wrap}
+.pillar{text-align:center;flex:1;min-width:220px;max-width:300px}
+.pillar-icon{width:90px;height:90px;background:var(--green);border-radius:50%;margin:0 auto 24px;display:flex;align-items:center;justify-content:center}
+.pillar-icon svg{width:40px;height:40px;stroke:var(--white);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.pillar h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--green);margin-bottom:12px}
+.pillar p{font-size:13px;color:var(--text-muted);line-height:1.8}
+
+/* ABOUT */
+.about{background:var(--cream)}
+.about-inner{display:flex;align-items:center;gap:70px}
+.about-img{width:340px;height:420px;flex-shrink:0;overflow:hidden;position:relative;background:#1a1a1a}
+.about-img img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.about-right h2{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;color:var(--green);margin-bottom:20px;line-height:1.2}
+.about-right p{font-size:13.5px;color:var(--text-muted);line-height:1.9;margin-bottom:28px}
+.about-box{background:var(--green);padding:28px 32px;border-radius:2px}
+.about-box ul{list-style:none}
+.about-box li{color:var(--white);font-size:13px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;gap:12px;letter-spacing:.3px}
+.about-box li:last-child{border-bottom:none}
+.about-box li::before{content:'✦';color:var(--tan-light);font-size:10px;flex-shrink:0}
+
+/* SERVICES */
+.services{background:var(--white)}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:40px}
+.service-card{text-align:center}
+.service-card-img{width:100%;height:180px;object-fit:cover;margin-bottom:16px}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:var(--green);margin-bottom:10px;letter-spacing:1px;text-transform:uppercase;line-height:1.3}
+.service-card p{font-size:12px;color:var(--text-muted);line-height:1.7}
+
+/* TESTIMONIALS */
+.testimonials{background:var(--cream)}
+.testi-grid{display:flex;gap:28px;flex-wrap:wrap;justify-content:center}
+.testi-card{background:var(--white);padding:36px;flex:1;min-width:280px;max-width:480px;border:1px solid var(--cream-dark)}
+.testi-title{font-family:'Cormorant Garamond',serif;font-size:28px;margin-bottom:8px;color:var(--text)}
+.testi-title em{font-style:italic;font-weight:400}
+.testi-title strong{font-weight:600;font-style:normal}
+.stars{color:#1a3a2e;font-size:16px;letter-spacing:3px;margin-bottom:14px}
+.testi-divider{border:none;border-top:1px solid var(--cream-dark);margin-bottom:16px}
+.testi-card p{font-size:11.5px;letter-spacing:.5px;color:var(--text);line-height:1.9;margin-bottom:20px}
+.testi-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--text);text-align:center}
+
+/* DISCOVERY */
+.discovery{background:var(--cream-dark);padding:100px 40px;text-align:center}
+.discovery h2{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:400;color:var(--green);margin-bottom:30px;line-height:1.1;letter-spacing:2px;text-transform:uppercase}
+.discovery p{font-size:13px;color:var(--text-muted);margin-bottom:36px;line-height:1.8}
+
+/* CONTACT */
+.contact{background:var(--green);padding:100px 40px}
+.contact .section-title{color:var(--white)}
+.contact .section-sub{color:rgba(255,255,255,0.7)}
+.contact-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:48px}
+.contact-item{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.08);padding:18px 28px;border:1px solid rgba(255,255,255,0.15);min-width:220px}
+.contact-item svg{width:20px;height:20px;stroke:var(--tan-light);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.contact-item span{color:var(--white);font-size:13px;letter-spacing:.3px}
+.contact-item a{color:var(--white);text-decoration:none}
+.contact-item a:hover{color:var(--tan-light)}
+.hours-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:20px 32px;max-width:320px;margin:0 auto 40px;text-align:center}
+.hours-box p{color:rgba(255,255,255,0.85);font-size:12px;line-height:1.9;letter-spacing:.5px}
+.hours-box p strong{color:var(--white);font-weight:600}
+.btn-outline{display:inline-block;border:1.5px solid var(--white);color:var(--white);padding:16px 48px;font-size:10px;letter-spacing:2.5px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;background:transparent}
+.btn-outline:hover{background:var(--white);color:var(--green)}
+
+/* NEXT STEPS */
+.next-steps{background:var(--green-dark);padding:60px 40px}
+.steps-row{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.step{text-align:center}
+.step-num{width:50px;height:50px;border:1.5px solid rgba(255,255,255,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--white);margin:0 auto 10px;font-weight:600}
+.step p{font-size:9px;letter-spacing:2px;color:rgba(255,255,255,0.7);text-transform:uppercase;max-width:100px;line-height:1.6}
+.step-arrow{color:rgba(255,255,255,0.3);font-size:20px;margin-bottom:20px}
+
+/* FOOTER */
+footer{background:var(--green-dark);border-top:1px solid rgba(255,255,255,0.1);padding:20px 40px;text-align:center}
+.footer-links{display:flex;gap:40px;justify-content:center}
+.footer-links a{color:rgba(255,255,255,0.5);font-size:10px;letter-spacing:2px;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+
+@media(max-width:768px){
+  nav{padding:0 20px}
+  .nav-links{gap:14px}
+  .nav-links a{font-size:8.5px}
+  .hero{flex-direction:column;padding:180px 20px 60px}
+  .hero h1{font-size:36px}
+  .hero-img-placeholder{width:100%;height:340px}
+  .about-inner{flex-direction:column}
+  .about-img{width:100%;height:300px}
+  section{padding:60px 20px}
+  .stats,
+  .discovery,
+  .contact,
+  .next-steps{padding:60px 20px}
+  .pillars,.testi-grid{flex-direction:column;align-items:center}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{flex-direction:column;align-items:center}
+  .steps-row{gap:10px}
+  .stat-circle{width:130px;height:130px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo-box">
+      <img src="logo.svg" alt="Kambiar Consulting Group">
+    </div>
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#why">WHY BUSINESS CONSULTING</a>
+      <a href="#about">ABOUT ME</a>
+      <a href="#testimonials">TESTIMONIALS</a>
+      <a href="#contact">CONTACT ME</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" style="padding:0">
+  <div class="hero">
+    <div class="hero-left">
+      <h1>Transform Your Business with Kambiar Consulting Group</h1>
+      <p class="hero-sub">UNLOCKING YOUR BUSINESS POTENTIAL, ONE TAILORED STRATEGY AT A TIME</p>
+      <ul class="checklist">
+        <li>20+ Years of Industry Experience</li>
+        <li>Direct Access to Kambiar Consulting Group</li>
+        <li>Comprehensive, One-on-One Consultations</li>
+      </ul>
+      <a href="#contact" class="btn-tan">GET STARTED TODAY</a>
+    </div>
+    <div class="hero-right">
+      <div class="hero-img-placeholder"><img src="hero.png" alt="Keona Banks-Todd, Principal Advisor"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="section-inner">
+    <p class="stats-headline">In just 9 years we've helped over 22+<br><span>small businesses</span></p>
+    <div class="stats-grid">
+      <div class="stat-circle"><span class="stat-num">22+</span><span class="stat-label">Clients</span></div>
+      <div class="stat-circle"><span class="stat-num">160+</span><span class="stat-label">Strategies</span></div>
+      <div class="stat-circle"><span class="stat-num">19,000</span><span class="stat-label">Emails Sent</span></div>
+      <div class="stat-circle"><span class="stat-num">100%</span><span class="stat-label">Satisfaction</span></div>
+    </div>
+    <p class="stats-desc">Kambiar Consulting Group advises healthcare founders, operators, and leaders on launching, fixing, and scaling compliant, profitable healthcare businesses.</p>
+  </div>
+</section>
+
+<!-- PERSONALIZED SOLUTIONS -->
+<section id="why" class="solutions">
+  <div class="section-inner">
+    <h2 class="section-title">Personalized Solutions,<br>Lasting Transformations</h2>
+    <p class="section-sub">YOUR BUSINESS IS UNIQUE, AND YOU DESERVE STRATEGIES THAT ARE AS INDIVIDUAL AS YOUR CHALLENGES. HERE'S HOW WE'LL MAKE A MEANINGFUL IMPACT TOGETHER.</p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Accelerate<br>Your Growth</h3>
+        <p>We'll delve deep to discover untapped opportunities for growth, then create strategies that fit just right.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><polyline points="8 12 11 15 16 9"/></svg></div>
+        <h3>Streamline<br>Operations</h3>
+        <p>Work less and accomplish more. Together, we'll refine your processes to increase efficiency and ease.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg></div>
+        <h3>Empower<br>Your Team</h3>
+        <p>Through one-on-one coaching sessions, your team will gain the tools and insights needed to excel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="section-inner">
+    <div class="about-inner">
+      <div class="about-img"><img src="about.jpg" alt="Keona Banks-Todd — Principal Advisor, Kambiar Consulting Group"></div>
+      <div class="about-right">
+        <h2>Meet the Expert Behind Your Next Business Breakthrough</h2>
+        <p style="font-size:11px;letter-spacing:2px;font-weight:600;color:var(--green);margin-bottom:8px">KEONA BANKS-TODD, BSN, RN — PRINCIPAL ADVISOR</p>
+        <p>With two decades in the industry, I've helped many business owners move from uncertainty into success stories. I'm not just here to offer quick fixes; I'm committed to understanding your unique challenges and partnering with you for long-term success. Together, let's unleash the true potential of your business.</p>
+        <div class="about-box">
+          <ul>
+            <li>From Bootstrapping to An Award-Winning Agency</li>
+            <li>CEO-Level Advisory — Not Coaching</li>
+            <li>Compliance-Driven Strategy & Real-World Execution</li>
+            <li>Comprehensive One-on-One Mentorship & Group Workshops</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-inner">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-sub">Each business has its own set of challenges and opportunities. That's why I offer specialized solutions designed to meet your specific needs.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <div style="width:100%;height:180px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1a3a2e" stroke-width="1.2" stroke-linecap="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="13" y2="15"/></svg>
+        </div>
+        <h3>Administrative Support</h3>
+        <p>Streamlined, compliance-ready administrative systems designed to stabilize operations, reduce risk, and support leadership during transition and growth.</p>
+      </div>
+      <div class="service-card">
+        <div style="width:100%;height:180px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1a3a2e" stroke-width="1.2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Customized Strategies / Workshops</h3>
+        <p>Facility-specific strategy sessions and interactive workshops aligned with your care model, staff needs, and organizational goals.</p>
+      </div>
+      <div class="service-card">
+        <div style="width:100%;height:180px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1a3a2e" stroke-width="1.2" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>BYOB (Build-Your-Own-Business) Program</h3>
+        <p>Executive and management business consulting focused on accountability, communication, culture-building, and effective leadership. Do-It-With-You or Do-It-For-You.</p>
+      </div>
+      <div class="service-card">
+        <div style="width:100%;height:180px;background:var(--cream);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1a3a2e" stroke-width="1.2" stroke-linecap="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        </div>
+        <h3>Marketing Strategy Consultation</h3>
+        <p>Strategic rebranding and occupancy-focused marketing guidance to rebuild trust, strengthen referrals, and drive qualified resident & patient inquiries.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials">
+  <div class="section-inner">
+    <h2 class="section-title">Client Reviews</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-title"><em>Client</em> <strong>REVIEW</strong></div>
+        <div class="stars">★★★★★</div>
+        <hr class="testi-divider">
+        <p>KEONA AND HER TEAM HAVE HELPED ME TAKE OUR COMPANY'S STAFFING TO THE NEXT LEVEL!! I WAS ONCE SO NERVOUS. HAD NO CLUE WHAT I WAS DOING, AND NOW I KNOW! THIS MENTORSHIP WAS NEEDED FOR OUR COMPANY AS I TOOK OVER THE LEAD MANAGER ROLE TO HELP US TO MOVE FORWARD.</p>
+        <div class="testi-name">Jamie S.</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-title"><em>Client</em> <strong>REVIEW</strong></div>
+        <div class="stars">★★★★★</div>
+        <hr class="testi-divider">
+        <p>FROM THE MOMENT I STEPPED INSIDE, I WAS GREETED BY THE WARM AND INVITING AMBIANCE THAT INSTANTLY PUT ME AT EASE. THANK YOU, KAMBIAR CONSULTING GROUP, ESPECIALLY KEONA FOR NOT ONLY HELPING ME WITH STAFFING NEEDS BUT ALSO ALL OF THE NECESSARY CLINICAL EXPERTISE THAT YOU AND YOUR TEAM PROVIDED. I'M BEYOND GRATEFUL TO FIND SUCH A CARING AND PROFESSIONAL COMPANY!</p>
+        <div class="testi-name">Olivia N. RN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEONA SECTION -->
+<section style="background:var(--cream-dark);padding:90px 40px">
+  <div class="section-inner">
+    <div style="display:flex;align-items:center;gap:70px;flex-wrap:wrap">
+      <div style="flex:1;min-width:280px">
+        <p style="font-size:11px;letter-spacing:3px;font-weight:600;color:var(--tan);margin-bottom:12px">PRINCIPAL ADVISOR</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:400;color:var(--green);margin-bottom:8px;line-height:1.2">Keona B. Todd</h2>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--text-muted);margin-bottom:24px">"The Real Nurse Ke"</p>
+        <p style="font-size:13px;color:var(--text-muted);line-height:1.9;margin-bottom:24px">Ready to take your business to the next level? Interested in our business advisory services? Book your discovery call today to begin the journey toward smoother operations.</p>
+        <p style="font-size:11px;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:6px">BSN, RN — Healthcare Executive Advisor</p>
+        <a href="mailto:hello@kambiarconsulting.com" class="btn-tan" style="margin-top:16px;display:inline-block">LET'S WORK TOGETHER</a>
+      </div>
+      <div style="width:380px;height:480px;flex-shrink:0;overflow:hidden">
+        <img src="hero.png" alt="Keona B. Todd — The Real Nurse Ke" style="width:100%;height:100%;object-fit:cover;object-position:top center">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVERY CALL -->
+<section class="discovery">
+  <div class="section-inner">
+    <h2>Book Your<br>Discovery<br>Call Today</h2>
+    <p>Take the first step toward efficiency. Reserve your discovery call to discuss how our consulting services can assist you.</p>
+    <a href="https://stan.store/therealnurseke" target="_blank" class="btn-tan">SCHEDULE YOUR CALL</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-inner">
+    <h2 class="section-title">Let's Turn Your Challenges<br>Into Opportunities</h2>
+    <p class="section-sub">Ready to take your business to the next level? Reach out and let's start building a plan tailored just for you.</p>
+    <div class="contact-grid">
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81 19.79 19.79 0 01.01 2.18 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        <span>864.210.1884</span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span><a href="mailto:hello@kambiarconsulting.com">hello@kambiarconsulting.com</a></span>
+      </div>
+      <div class="contact-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <span><a href="http://www.kambiarconsulting.com" target="_blank">www.kambiarconsulting.com</a></span>
+      </div>
+    </div>
+    <div class="hours-box">
+      <p><strong>Office Hours</strong><br>Monday, Wednesday & Friday<br>9:00am – 5:00pm<br>*Closed weekends and holidays</p>
+    </div>
+    <div class="center"><a href="mailto:hello@kambiarconsulting.com" class="btn-outline">START YOUR TRANSFORMATION JOURNEY</a></div>
+  </div>
+</section>
+
+<!-- NEXT STEPS -->
+<section class="next-steps">
+  <div class="section-inner">
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;color:var(--white);text-align:center;margin-bottom:40px">Next Steps</h2>
+    <div class="steps-row">
+      <div class="step"><div class="step-num">01</div><p>Book Your Discovery Call</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">02</div><p>Confirm Your Needs</p></div>
+      <div class="step-arrow">→</div>
+      <div class="step"><div class="step-num">03</div><p>Let's Begin the Work</p></div>
+    </div>
+    <p style="text-align:center;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.4);margin-top:40px">KAMBIAR CONSULTING GROUP — A DIVISION OF KAMBIAR HEALTHCARE, LLC</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="#">PRIVACY POLICY</a>
+    <a href="#">TERMS AND CONDITIONS</a>
+  </div>
+</footer>
+
+</body>
+</html>
